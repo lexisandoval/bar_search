@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
 require './lib/bar_search'
 
+BarSearch::Scraper.new.start
 BarSearch::CLI.new.call

@@ -43,15 +43,15 @@ class BarSearch::CLI
 
 
     def scrape
-      doc = Nokogiri::HTML(open("https://www.theinfatuation.com/chicago/guides/best-bars-in-chicago"))
-      bars = doc.css(".spot-block__title-copy h3").text.strip
-      info = doc.css(".spot-block__description-section p").text.strip
-
-      ## prices for each bar
-      price = []
-      doc.css(".overview-price-rating").each do |bar|
-        price << bar.attribute("data-price").value
-      end
+      # doc = Nokogiri::HTML(open("https://www.theinfatuation.com/chicago/guides/best-bars-in-chicago"))
+      # bars = doc.css(".spot-block__title-copy h3").text.strip
+      # info = doc.css(".spot-block__description-section p").text.strip
+      #
+      # ## prices for each bar
+      # price = []
+      # doc.css(".overview-price-rating").each do |bar|
+      #   price << bar.attribute("data-price").value
+      # end
 
       #temporary link for restaurant address and website
       link = Nokogiri::HTML(open("https://www.theinfatuation.com/chicago/reviews/guthries-tavern"))
