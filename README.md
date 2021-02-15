@@ -1,6 +1,6 @@
 # BarSearch
 
-Find Chicago's best bars via BarSearch!
+Discover Chicago's favorite bars via BarSearch!
 
 ## Installation
 
