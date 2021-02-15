@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 require './lib/bar_search'
 
+# temporary for testing
 BarSearch::Scraper.new.start
+
+# this line stays, begins CLI
 BarSearch::CLI.new.call
