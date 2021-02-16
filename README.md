@@ -21,6 +21,7 @@ Or install it yourself as:
 ## Usage
 
 To run the CLI, please make sure you are within the head bar_search folder and run the command $./bin/bar_search
+Once the application is open, you may review information about 25 of Chicago's best bars by following the prompts. Cheers!
 
 ## Development
 
