@@ -1,14 +1,14 @@
 class BarSearch::Bar
 
-  attr_accessor :name, :info, :review_url
-  #, :price, :address, :website
+  attr_accessor :name, :info, :review_url, :price
+  #, :address, :website
   @@all = []
 
-  def initialize(name, info, review_url)
+  def initialize(name, info, review_url, price)
     @name = name
     @info = info
     @review_url = review_url
-    #@price = price
+    @price = price
     save
   end
 

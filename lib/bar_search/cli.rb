@@ -2,12 +2,7 @@ class BarSearch::CLI
 
     def call
         puts "\n\nWelcome to Chicago's Bar Search!".light_blue
-
         get_bars
-        goodbye
-        #list_bars
-        # menu
-        # goodbye
     end
 
     def get_bars
@@ -22,54 +17,52 @@ class BarSearch::CLI
       @bars.each.with_index(1) do |bar, index|
         puts "#{index}. #{bar.name}".red
       end
-      get_bar_choice
+      get_user_choice
     end
 
-    def get_bar_choice
-      user_chosen_bar = gets.strip.to_i
-      if valid_input?(user_chosen_bar)
-        show_bar_info(user_chosen_bar)
+    def get_user_choice
+      user_choice = gets.strip
+
+      if user_choice == "exit"
+        goodbye
       else
-        puts "\nI didn't get that. Please enter a number or type \"exit\".".light_magenta
-        get_bar_choice
+        if valid_input?(user_choice.to_i)
+          show_bar_info(user_choice.to_i)
+        else
+          puts "\nI didn't get that. Please enter a number or type \"exit\".\n".yellow
+          get_user_choice
+        end
       end
     end
 
-    def show_bar_info(user_chosen_bar)
-      bar = @bars[user_chosen_bar - 1]
+    def show_bar_info(user_choice)
+      bar = @bars[user_choice - 1]
+
       puts "\nOkay, here's info for #{bar.name}:\n\n"
-      puts "#{bar.info}\n".light_blue
-      puts "Website: #{bar.review_url}".light_blue
+      puts "• About: #{bar.info}".light_blue
+      puts "• Price Range: #{bar.price}".light_blue
+      puts "• Website: #{bar.review_url}".light_blue
+
+      again?
     end
 
     def valid_input?(user_chosen_bar)
       user_chosen_bar > 0 && user_chosen_bar < 26
     end
 
-    def menu
-        input = nil
+    def again?
+      puts "\nDo you want to view the bar list again? [y/n]".red
 
-        while input != "exit"
-            #
-            # puts "\nWhich of the following bars would you like to learn more about?"
-            # puts "Enter the bar number or type exit to end your search.\n\n"
+      input = gets.strip
 
-            # @bars.each.with_index(1) do |bar, index|
-            #     puts "#{index}. #{bar}\n".red
-            # end
-
-            input = gets.strip.downcase
-            case input
-            when "1"
-                puts "\ninfo for WL".blue
-            when "2"
-                puts "\ninfo for BV".blue
-            when "3"
-                puts "\ninfo for LV".blue
-            else
-                puts "\nI didn't get that. Please enter a number or type \"exit\".".light_magenta
-            end
-        end
+      if input == "y"
+        list_bars
+      elsif input == "n"
+        goodbye
+      else
+        puts "I didn't get that. Please type \"y\" or \"n\"".yellow
+        again?
+      end
     end
 
     def goodbye

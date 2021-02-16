@@ -8,12 +8,20 @@ class BarSearch::Scraper
       name = bar.css(".spot-block__title-copy h3").text.strip
       info = bar.css(".spot-block__description-section p").text.strip
       review_url = "https://www.theinfatuation.com" + bar.css(".spot-block__title-copy a").attribute("href").value
-      # price = ""
-      # bar.css(".overview-price-rating").each do |bar|
-      #   price = bar.attribute("data-price").value
-      # end
 
-      BarSearch::Bar.new(name, info, review_url)
+      price = ""
+      bar.css(".overview-price-rating").each do |bar|
+        price_num = bar.attribute("data-price").value
+        if price_num == "1"
+          price = "$"
+        elsif price_num == "2"
+          price = "$$"
+        else
+          price = "$$$"
+        end
+      end
+
+      BarSearch::Bar.new(name, info, review_url, price)
 
     end
 
