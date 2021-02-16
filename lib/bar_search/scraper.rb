@@ -16,8 +16,7 @@ class BarSearch::Scraper
       BarSearch::Bar.new(name, info, review_url)
 
     end
-    # puts "#{bars}"
-    # binding.pry
+
 
   end
 
