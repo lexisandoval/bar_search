@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["lexi.sandoval9@gmail.com"]
 
   spec.summary       = %q{Bar Search}
-  spec.description   = %q{Search for bars in Chicago}
+  spec.description   = %q{Search for bars in Chicago!}
   spec.homepage      = "https://github.com/lexisandoval/bar_search"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
@@ -18,8 +18,6 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/lexisandoval/bar_search"
   spec.metadata["changelog_uri"] = "https://github.com/lexisandoval/bar_search/commits/main"
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end

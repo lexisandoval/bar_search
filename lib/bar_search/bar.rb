@@ -1,7 +1,6 @@
 class BarSearch::Bar
 
   attr_accessor :name, :info, :review_url, :price
-  #, :address, :website
   @@all = []
 
   def initialize(name, info, review_url, price)

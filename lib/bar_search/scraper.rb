@@ -22,19 +22,7 @@ class BarSearch::Scraper
       end
 
       BarSearch::Bar.new(name, info, review_url, price)
-
     end
-
-
   end
-
-  # def scrape_bar_profile(bar)
-  #
-  #   url = "#{bar.review_url}"
-  #   doc = Nokogiri::HTML(open(url))
-  #
-  #   address = doc.css(".post__sidebar__info__col__block.contact-info .small").first.text
-  #   website = doc.css(".post__sidebar__info__website a").attribute("href").value
-  # end
-
+  
 end

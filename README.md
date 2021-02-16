@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run the CLI, please make sure you are within the head bar_search folder and run the command $./bin/bar_search
 
 ## Development
 
