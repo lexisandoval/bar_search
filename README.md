@@ -2,6 +2,8 @@
 
 Discover Chicago's favorite bars via BarSearch!
 
+![alt text](https://imgur.com/fZbGyQu)
+
 ## Installation
 
 Add this line to your application's Gemfile:
