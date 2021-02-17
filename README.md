@@ -2,7 +2,7 @@
 
 Discover Chicago's favorite bars via BarSearch!
 
-![alt text](https://imgur.com/fZbGyQu)
+![alt text](https://flic.kr/p/2kCEiWq)
 
 ## Installation
 
