@@ -2,8 +2,6 @@
 
 Discover Chicago's favorite bars via BarSearch!
 
-![alt text](https://flic.kr/p/2kCEiWq)
-
 ## Installation
 
 Add this line to your application's Gemfile:
