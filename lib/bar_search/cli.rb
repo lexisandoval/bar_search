@@ -28,7 +28,7 @@ class BarSearch::CLI
     if user_choice == "exit"
       goodbye
     else
-      if valid_input?(user_choice.to_i)
+      if valid_input?(user_choice.to_i, @bars)
         show_bar_info(user_choice.to_i)
       else
         puts "\nI didn't get that. Please enter a number between 1 and 25 or type \"exit\".\n".yellow
@@ -48,8 +48,8 @@ class BarSearch::CLI
     again?
   end
 
-  def valid_input?(user_chosen_bar) #add second arg
-    user_chosen_bar > 0 && user_chosen_bar < 26
+  def valid_input?(user_chosen_bar, bar_collection)
+    user_chosen_bar > 0 && user_chosen_bar < bar_collection.length
   end
 
   def again?
