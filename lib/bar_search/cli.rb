@@ -14,7 +14,7 @@ class BarSearch::CLI
     puts "\nWhich of the following bars would you like to learn more about?".light_blue
     puts "Enter the bar number or type \"exit\" to end your search.\n".light_blue
 
-    @bars.each.with_index(1) do |bar, index|
+    @bars.sort_by {|bar| bar.name}.each.with_index(1) do |bar, index|
       puts "#{index}. #{bar.name}".red
     end
 
@@ -48,7 +48,7 @@ class BarSearch::CLI
     again?
   end
 
-  def valid_input?(user_chosen_bar)
+  def valid_input?(user_chosen_bar) #add second arg
     user_chosen_bar > 0 && user_chosen_bar < 26
   end
 

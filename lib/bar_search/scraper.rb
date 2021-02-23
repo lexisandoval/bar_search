@@ -12,13 +12,14 @@ class BarSearch::Scraper
       price = ""
       bar.css(".overview-price-rating").each do |bar|
         price_num = bar.attribute("data-price").value
-        if price_num == "1"
-          price = "$"
-        elsif price_num == "2"
-          price = "$$"
-        else
-          price = "$$$"
-        end
+        # if price_num == "1"
+        #   price = "$"
+        # elsif price_num == "2"
+        #   price = "$$"
+        # else
+        #   price = "$$$"
+        # end
+        price = price_num.to_i.times.collect{"$"}.join("")
       end
 
       BarSearch::Bar.new(name, info, review_url, price)
